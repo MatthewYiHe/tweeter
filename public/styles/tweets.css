@@ -1,0 +1,56 @@
+
+
+#tweets-container .tweets {
+  margin: 15px 0 0 0;
+  overflow: auto;
+  border: 3px groove;
+  border-radius: 7px;
+}
+#tweets-container .tweets:hover{
+  border-color: grey;
+}
+
+#tweets-container .tweets header{
+  overflow: auto;
+  background-color: lightgrey;
+  padding: 10px;
+  display: flex;
+  opacity: 0.7;
+}
+#tweets-container .tweets:hover header{
+  opacity: 1;
+}
+
+#tweets-container .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 7px;
+}
+
+#tweets-container .username {
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 45px;
+}
+#tweets-container .nickname {
+  color: grey;
+  /*float: right;*/
+  margin-left: auto;
+  padding: 10px;
+}
+
+#tweets-container .tweets p{
+  float: left;
+  position: relative;
+  padding: 10px;
+}
+
+#tweets-container .tweets footer{
+  border-top: 1px groove;
+  padding: 7px;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+

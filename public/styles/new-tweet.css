@@ -1,0 +1,24 @@
+.container .new-tweet{
+  border: 3px groove;
+  border-radius: 7px;
+  background-color: #f2f2f2;
+  padding: 1em;
+}
+
+.new-tweet textarea {
+  width: 100%;
+  padding: 7px;
+}
+
+.new-tweet output {
+  float: right;
+}
+
+.new-tweet h2 {
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid black;
+}
+
+.neg {
+  color: red;
+}
