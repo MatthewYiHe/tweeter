@@ -80,9 +80,10 @@ $(document).ready(function() {
     }
   });
 
-  //slide compse up and down
+  //slide compse up and down, and auto focus on the text area
     $("#compose").click(function(){
       $(".new-tweet").slideToggle();
+      $("#textInput").focus()
     });
 });
 
