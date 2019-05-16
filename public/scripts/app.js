@@ -79,5 +79,10 @@ $(document).ready(function() {
       });
     }
   });
+
+  //slide compse up and down
+    $("#compose").click(function(){
+      $(".new-tweet").slideToggle();
+    });
 });
 
