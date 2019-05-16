@@ -58,7 +58,7 @@ $(document).ready(function() {
   }
 
 
-
+//post the tweet upon click the submit button, upon success, it will reload the tweets.
   $("#submitTweet").on("click",function(event){
     event.preventDefault();
     console.log($(".counter").val())
