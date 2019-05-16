@@ -1,5 +1,9 @@
 $(document).ready(function() {
-  $.getJSON("http://localhost:8080/tweets", renderTweets);
+  function loadTweets() {
+    $.getJSON("http://localhost:8080/tweets", renderTweets);
+  }
+  loadTweets();
+  // to calculate how long the tweets have been submited
   function formatTime (time) {
     var diff = Math.floor((Date.now() - time) / 1000);
     var interval = Math.floor(diff / 31536000);
@@ -30,16 +34,7 @@ $(document).ready(function() {
     return "<1m";
   }
 
-  function renderTweets(tweets) {
-    // loops through tweets
-    for (let tweetNum in tweets){
-      $('#tweets-container').prepend(createTweetElement(tweets[tweetNum]));
-    }
-      // calls createTweetElement for each tweet
-      // takes return value and appends it to the tweets container
-  }
-
-
+// extract info from the one tweet and append them to the new created <artical> under <section>
   let createTweetElement = function(data){
      const a = $("<article>").addClass("tweets");
      const $image = $("<img>").attr("src", data.user.avatars.small).addClass("avatar");
@@ -52,17 +47,37 @@ $(document).ready(function() {
     return a;
   };
 
+//loop through every tweets and appand them to the home page
+  function renderTweets(tweets) {
+    // loops through tweets
+    // calls createTweetElement for each tweet
+    for (let tweetNum in tweets){
+    // takes return value and appends it to the tweets container
+      $('#tweets-container').prepend(createTweetElement(tweets[tweetNum]));
+    }
+  }
+
+
+
   $("#submitTweet").on("click",function(event){
     event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: $("#textInput").serialize(),
-      success: function(){
-        $("#textInput").val("");
-        $.getJSON("http://localhost:8080/tweets", renderTweets);
-      }
-    });
+    console.log($(".counter").val())
+    if ($(".counter").val() < 0){
+      alert("content is too long");
+    } else {
+         $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: $("#textInput").serialize(),
+        success: function(){
+          $("#textInput").val("");
+          loadTweets();
+        },
+        error: function(){
+          alert("content is not present");
+        }
+      });
+    }
   });
 });
 

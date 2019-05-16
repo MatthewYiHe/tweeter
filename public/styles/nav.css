@@ -7,6 +7,7 @@
   background: #00a087;
   width: 100%;
   padding: 0 2em;
+  z-index: 1;
 }
 
 #nav-bar .logo {
