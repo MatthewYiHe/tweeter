@@ -10,6 +10,18 @@
   padding: 7px;
 }
 
+#contentzero {
+  color: #D8000C;
+  display: none;
+  padding-left: 50px;
+}
+#tooMuchcontent {
+  color: #D8000C;
+  display: none;
+  padding-left: 30px;
+}
+
+
 .new-tweet output {
   float: right;
 }

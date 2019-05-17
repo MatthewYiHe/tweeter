@@ -63,7 +63,7 @@ $(document).ready(function() {
     event.preventDefault();
     console.log($(".counter").val())
     if ($(".counter").val() < 0){
-      alert("content is too long");
+      $("#tooMuchcontent").slideDown().fadeOut(3000);
     } else {
          $.ajax({
         type: "POST",
@@ -74,7 +74,7 @@ $(document).ready(function() {
           loadTweets();
         },
         error: function(){
-          alert("content is not present");
+          $("#contentzero").slideDown().fadeOut(3000);
         }
       });
     }
