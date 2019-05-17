@@ -63,7 +63,9 @@ $(document).ready(function() {
     event.preventDefault();
     console.log($(".counter").val())
     if ($(".counter").val() < 0){
-      $("#tooMuchcontent").slideDown().fadeOut(3000);
+      $("#tooMuchcontent").slideDown("slow").fadeOut(3000);
+    } else if ($(".counter").val() >= 140){
+      $("#contentzero").slideDown("slow").fadeOut(3000);
     } else {
          $.ajax({
         type: "POST",
@@ -74,7 +76,7 @@ $(document).ready(function() {
           loadTweets();
         },
         error: function(){
-          $("#contentzero").slideDown().fadeOut(3000);
+          alert("error occured");
         }
       });
     }
@@ -83,7 +85,7 @@ $(document).ready(function() {
   //slide compse up and down, and auto focus on the text area
     $("#compose").click(function(){
       $(".new-tweet").slideToggle();
-      $("#textInput").focus()
+      $("#textInput").focus();
     });
 });
 
