@@ -66,9 +66,9 @@ $(document).ready(function() {
     event.preventDefault();
     console.log($(".counter").val());
     if ($(".counter").val() < 0){
-      $("#tooMuchcontent").slideDown("slow").fadeOut(3000);
+      $("#tooMuchcontent").slideDown("slow").fadeOut(5000);
     } else if ($(".counter").val() >= 140){
-      $("#contentzero").slideDown("slow").fadeOut(3000);
+      $("#contentzero").slideDown("slow").fadeOut(5000);
     } else {
          $.ajax({
         type: "POST",
@@ -76,6 +76,7 @@ $(document).ready(function() {
         data: $("#textInput").serialize(),
         success: function(){
           $("#textInput").val("");
+          $(".counter").val(140);
           loadTweets();
         },
         error: function(){
@@ -86,9 +87,13 @@ $(document).ready(function() {
   });
 
   //slide compse up and down, and auto focus on the text area
-    $("#compose").click(function(){
+    $(".btn").click(function(){
       $(".new-tweet").slideToggle();
       $("#textInput").focus();
+    });
+//trying to get color for icon to change
+    $(".fas").on("click", function(){
+      $(".fas").css("color", "red");
     });
 });
 

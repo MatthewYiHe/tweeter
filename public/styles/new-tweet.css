@@ -1,7 +1,7 @@
 .container .new-tweet{
   border: 3px groove;
   border-radius: 7px;
-  background-color: #f2f2f2;
+  background-color: #69bfaea8;
   padding: 1em;
   display: none;
 }
@@ -25,6 +25,7 @@
 
 .new-tweet output {
   float: right;
+  padding: 3px;
 }
 
 .new-tweet h2 {

@@ -25,7 +25,7 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header fixed">Tweeter</span>
-      <button id="compose">Compose</button>
+      <button class="btn"><i class="fa fa-edit"></i> Compose</button>
     </nav>
 
 
@@ -38,8 +38,8 @@
           <form method="POST" action="/tweets">
             <textarea id="textInput" name="text" placeholder="What are you humming about?"></textarea>
             <input id="submitTweet" type="submit" value="Tweet">
-            <span id="contentzero">content is not present</span>
-            <span id="tooMuchcontent">content is too loooooooong</span>
+            <span id="contentzero">Oops, box is empty</span>
+            <span id="tooMuchcontent">Tooooo much letters!</span>
             <output class="counter">140</output>
           </form>
         </section>
