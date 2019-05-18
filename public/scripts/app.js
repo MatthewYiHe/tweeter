@@ -41,9 +41,12 @@ $(document).ready(function() {
      const $name = $("<h3>").text(data.user.name).addClass("username");
      const $handle = $("<h5>").text(data.user.handle).addClass("nickname");
      const $daysPast = formatTime(data.created_at) + " ago";
+     const $flag = $("<i class='fas fa-flag'></i>");
+     const $retweet = $("<i class='fas fa-retweet'></i>");
+     const $heart = $("<i class='fas fa-grin-hearts'></i>");
      $("<header>").append($image).append($name).append($handle).appendTo(a);
      $("<p>").text(data.content.text).appendTo(a);
-     $("<footer>").append($daysPast).appendTo(a);
+     $("<footer>").append($daysPast).append($heart).append($retweet).append($flag).appendTo(a);
     return a;
   };
 
@@ -61,7 +64,7 @@ $(document).ready(function() {
 //post the tweet upon click the submit button, upon success, it will reload the tweets.
   $("#submitTweet").on("click",function(event){
     event.preventDefault();
-    console.log($(".counter").val())
+    console.log($(".counter").val());
     if ($(".counter").val() < 0){
       $("#tooMuchcontent").slideDown("slow").fadeOut(3000);
     } else if ($(".counter").val() >= 140){

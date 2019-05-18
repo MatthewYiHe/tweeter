@@ -44,6 +44,7 @@
   float: left;
   position: relative;
   padding: 10px;
+  word-break: break-word;
 }
 
 #tweets-container .tweets footer{
@@ -54,3 +55,12 @@
   width: 100%;
 }
 
+.fas {
+  color: #00a087;
+  padding: 5px;
+  float: right;
+  visibility: hidden;
+}
+#tweets-container .tweets:hover .fas {
+  visibility: visible;
+}
