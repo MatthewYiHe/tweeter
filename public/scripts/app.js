@@ -92,8 +92,8 @@ $(document).ready(function() {
       $("#textInput").focus();
     });
 //trying to get color for icon to change
-    $(".fas").on("click", function(){
-      $(".fas").css("color", "red");
+    $("#tweets-container").on("click", ".fas", function(){
+      $(this).css("color", "red");
     });
 });
 
