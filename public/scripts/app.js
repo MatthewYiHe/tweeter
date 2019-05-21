@@ -60,6 +60,10 @@ $(document).ready(function() {
     }
   }
 
+//just getting the new tweets from the database
+  function renderNewTweets(tweets) {
+      $('#tweets-container').prepend(createTweetElement(tweets[tweets.length - 1]));
+  }
 
 //post the tweet upon click the submit button, upon success, it will reload the tweets.
   $("#submitTweet").on("click",function(event){
@@ -77,7 +81,7 @@ $(document).ready(function() {
         success: function(){
           $("#textInput").val("");
           $(".counter").val(140);
-          loadTweets();
+          $.getJSON("http://localhost:8080/tweets", renderNewTweets);
         },
         error: function(){
           alert("error occured");
