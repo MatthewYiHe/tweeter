@@ -60,15 +60,10 @@ $(document).ready(function() {
     }
   }
 
-//just getting the new tweets from the database
-  function renderNewTweets(tweets) {
-      $('#tweets-container').prepend(createTweetElement(tweets[tweets.length - 1]));
-  }
 
 //post the tweet upon click the submit button, upon success, it will reload the tweets.
   $("#submitTweet").on("click",function(event){
     event.preventDefault();
-    console.log($(".counter").val());
     if ($(".counter").val() < 0){
       $("#tooMuchcontent").slideDown("slow").fadeOut(5000);
     } else if ($(".counter").val() >= 140){
@@ -78,10 +73,10 @@ $(document).ready(function() {
         type: "POST",
         url: "/tweets",
         data: $("#textInput").serialize(),
-        success: function(){
+        success: function(tweet){
           $("#textInput").val("");
           $(".counter").val(140);
-          $.getJSON("http://localhost:8080/tweets", renderNewTweets);
+          renderTweets([tweet]);
         },
         error: function(){
           alert("error occured");
